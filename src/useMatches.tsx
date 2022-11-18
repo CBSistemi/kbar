@@ -74,7 +74,10 @@ export function useMatches() {
     return getDeepResults(rootResults);
   }, [getDeepResults, rootResults, emptySearch]);
 
-  const matches = useInternalMatches(filtered, search);
+  const matches = useInternalMatches(
+    filtered,
+    (/[^//]*/.exec(search) ?? [""])[0]
+  );
 
   const results = React.useMemo(() => {
     /**

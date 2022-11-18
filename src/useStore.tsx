@@ -35,6 +35,7 @@ export function useStore(props: useStoreProps) {
   // TODO: at this point useReducer might be a better approach to managing state.
   const [state, setState] = React.useState<KBarState>({
     searchQuery: "",
+    argv: [],
     currentRootActionId: null,
     visualState: VisualState.hidden,
     actions: { ...actionsInterface.actions },
@@ -91,11 +92,15 @@ export function useStore(props: useStoreProps) {
             visualState: typeof cb === "function" ? cb(state.visualState) : cb,
           }));
         },
-        setSearch: (searchQuery) =>
+        setSearch: (searchQuery) => {
+          const argv = searchQuery.split("/");
+
           setState((state) => ({
             ...state,
             searchQuery,
-          })),
+            argv,
+          }));
+        },
         registerActions,
         toggle: () =>
           setState((state) => ({
