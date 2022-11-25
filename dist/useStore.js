@@ -91,7 +91,7 @@ function useStore(props) {
                     setState(function (state) { return (__assign(__assign({}, state), { visualState: typeof cb === "function" ? cb(state.visualState) : cb })); });
                 },
                 setSearch: function (searchQuery) {
-                    var argv = searchQuery.split("/");
+                    var argv = searchQuery.split("!");
                     setState(function (state) { return (__assign(__assign({}, state), { searchQuery: searchQuery, argv: argv })); });
                 },
                 registerActions: registerActions,

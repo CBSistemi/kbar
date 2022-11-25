@@ -76,7 +76,7 @@ export function useMatches() {
 
   const matches = useInternalMatches(
     filtered,
-    (/[^//]*/.exec(search) ?? [""])[0]
+    (/[^!]*/.exec(search) ?? [""])[0]
   );
 
   const results = React.useMemo(() => {

@@ -93,7 +93,7 @@ export function useStore(props: useStoreProps) {
           }));
         },
         setSearch: (searchQuery) => {
-          const argv = searchQuery.split("/");
+          const argv = searchQuery.split("!");
 
           setState((state) => ({
             ...state,

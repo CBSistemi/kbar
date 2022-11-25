@@ -88,7 +88,7 @@ function useMatches() {
             return rootResults;
         return getDeepResults(rootResults);
     }, [getDeepResults, rootResults, emptySearch]);
-    var matches = useInternalMatches(filtered, ((_a = /[^//]*/.exec(search)) !== null && _a !== void 0 ? _a : [""])[0]);
+    var matches = useInternalMatches(filtered, ((_a = /[^!]*/.exec(search)) !== null && _a !== void 0 ? _a : [""])[0]);
     var results = React.useMemo(function () {
         var _a, _b;
         /**
